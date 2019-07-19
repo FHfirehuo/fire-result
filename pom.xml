@@ -4,7 +4,36 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.FHfirehuo</groupId>
 	<artifactId>fire-result</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${project.release.version}</version>
+
+	<name>FireResult</name>
+	<description>define some class for body of http response</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.release.version>0.0.1-SNAPSHOT</project.release.version>
+	</properties>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/FHfirehuo/fire-result</url>
+		<connection>https://github.com/FHfirehuo/fire-result.git</connection>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>liuyi</name>
+			<email>gegeaininiaige@outlook.com</email>
+			<organization>firehuo</organization>
+		</developer>
+	</developers>
 
 	<dependencies>
 		<dependency>
@@ -15,9 +44,33 @@
 		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>releases</id>
+			<properties>
+				<project.release.version>0.0.1</project.release.version>
+			</properties>
+		</profile>
+	</profiles>
+
 	<build>
 		<pluginManagement>
 			<plugins>
+				<!-- Source -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.2.1</version>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>jar-no-fork</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
@@ -36,6 +89,7 @@
 					</configuration>
 				</plugin>
 
+				<!-- Javadoc -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
@@ -71,7 +125,39 @@
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
+
+				<!-- GPG -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>1.6</version>
+					<executions>
+						<execution>
+							<phase>verify</phase>
+							<goals>
+								<goal>sign</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>firehuo</id>
+			<name>releases</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>firehuo</id>
+			<name>snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
+
 </project>
