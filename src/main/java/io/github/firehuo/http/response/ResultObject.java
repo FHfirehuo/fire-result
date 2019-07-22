@@ -24,7 +24,7 @@ public class ResultObject<T> extends DefaultResult {
 	/**
 	 * 初始化data 则认为是成功
 	 * 
-	 * @param data
+	 * @param data 最终的消息体
 	 */
 	public ResultObject(T data) {
 		this(SUCCESS, data);
@@ -33,8 +33,8 @@ public class ResultObject<T> extends DefaultResult {
 	/**
 	 * 初始化data 则认为是成功。code值为成功值。message默认为成功消息
 	 * 
-	 * @param code
-	 * @param data
+	 * @param code  自定义的返回值
+	 * @param data  最终的消息体
 	 */
 	public ResultObject(int code, T data) {
 		this(code, SUCCESS_MESSAGE, data);
@@ -43,8 +43,8 @@ public class ResultObject<T> extends DefaultResult {
 	/**
 	 * 初始化data 则认为是成功。code值为默认成功值 {@code SUCCESS}。message默认为消息
 	 * 
-	 * @param code
-	 * @param data
+	 * @param message  自定义描述
+	 * @param data 最终的消息体
 	 */
 	public ResultObject(String message, T data) {
 		this(SUCCESS, message, data);
@@ -53,9 +53,9 @@ public class ResultObject<T> extends DefaultResult {
 	/**
 	 * 自己构建完整消息体
 	 * 
-	 * @param code
-	 * @param message
-	 * @param data
+	 * @param code 自定义返回值
+	 * @param message 自定义描述
+	 * @param data 最终的消息体
 	 */
 	public ResultObject(int code, String message, T data) {
 		super(code, message);
