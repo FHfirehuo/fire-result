@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public abstract class DefaultResult implements Result {
+public class DefaultResult implements Result {
 
 	private Integer code;
 	private String msg;

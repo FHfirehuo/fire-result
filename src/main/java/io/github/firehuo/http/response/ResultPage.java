@@ -20,7 +20,7 @@ public class ResultPage<T> extends ResultList<T> {
 	 * </p>
 	 * 
 	 * @return 返回 {@code io.github.firehuo.http.response.Page<T>}类型的对象
-	 * @throws ProviderException
+	 * @throws ProviderException 服务提供方出现异常返回失败结果
 	 */
 	public final Page<T> getReusltPageOnSuccess() {
 		return getReusltPageOnSuccess(SUCCESS);
@@ -32,7 +32,7 @@ public class ResultPage<T> extends ResultList<T> {
 	 * </p>
 	 * @param successCode 预期成功的 {@code code} 值
 	 * @return 返回 {@code io.github.firehuo.http.response.Page<T>}类型的对象
-	 * @throws ProviderException
+	 * @throws ProviderException 服务提供方出现异常返回失败结果
 	 */
 	public final Page<T> getReusltPageOnSuccess(int successCode) {
 		if (isSuccess(successCode)) {

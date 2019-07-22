@@ -20,7 +20,12 @@
                         ResultObject.java
                         ResultPage.java
                         SuccessResult.java
+                       
 ```
+
+###### 如何使用
+
+    
 
 ###### 关于发布
 
@@ -39,4 +44,16 @@
 这个前面的Sonatype工作人员其实在审核你的Issue时，在comment中已经提示你了，在Issue下面回复一条“构件已成功发布”的评论，这是为了通知 Sonatype 的工作人员为需要发布的构件做审批，发布后会关闭该Issue。
 
 
+```
+gpg --keyserver hkp://pool.sks-keyservers.net --send-keys ****1
+gpg --keyserver hkp://pool.sks-keyservers.net:11371 --send-keys ***1
+gpg --keyserver hkp://keyserver.ubuntu.com:11371 --send-keys ***1
+gpg --keyserver hkp://keys.gnupg.net:11371 --send-keys ***1
+
+```
+```
+ mvn clean deploy –P release
+```
+
+发布借鉴文章 https://blog.csdn.net/xiajiqiu/article/details/77607492
     
