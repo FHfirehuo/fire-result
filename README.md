@@ -1,5 +1,10 @@
 ## FIRE RESULT
 
+Other languages
+
+[ENGLISH](./README_EN)
+
+
     支持 jdk1.6+
     本项目使用lombok进行开发
     
