@@ -2,7 +2,7 @@
 
 Other languages
 
-[ENGLISH](./README_EN)
+[ENGLISH](./README_EN.md)
 
 
     支持 jdk1.6+
@@ -30,7 +30,15 @@ Other languages
 
 ###### 如何使用
 
-    
+pom.xml中引入maven依赖
+
+```xml
+    <dependency>
+	    <groupId>io.github.FHfirehuo</groupId>
+	    <artifactId>fire-result</artifactId>
+        <version>{latest.version}</version>
+    </dependency>
+```
 
 ###### 关于发布
 
