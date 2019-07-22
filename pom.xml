@@ -13,7 +13,7 @@
 		<project.release.version>0.0.2-SNAPSHOT</project.release.version>
 		<java.version>1.6</java.version>
 	</properties>
-	
+
 	<profiles>
 		<profile>
 			<id>release</id>
@@ -49,11 +49,6 @@
 		<url>https://github.com/FHfirehuo/fire-result</url>
 	</scm>
 
-	<!-- <parent> <groupId>org.sonatype.oss</groupId> <artifactId>oss-parent</artifactId> 
-		<version>7</version> </parent> -->
-
-
-
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -85,6 +80,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -98,7 +94,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -124,7 +119,6 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-
 
 		</plugins>
 	</build>
