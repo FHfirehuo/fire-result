@@ -65,7 +65,8 @@ gpg --keyserver hkp://keys.gnupg.net:11371 --send-keys ***1
 
 ```
 ```
- mvn clean deploy –P release
+    发布测试: mvn clean deploy
+     发布正式:mvn clean deploy –P release
 ```
 
 发布借鉴文章 https://blog.csdn.net/xiajiqiu/article/details/77607492
