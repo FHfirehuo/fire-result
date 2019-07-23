@@ -1,5 +1,8 @@
 package io.github.firehuo.http.response;
 
+import lombok.ToString;
+
+@ToString
 public class FailResult extends DefaultResult {
 
 	public FailResult() {

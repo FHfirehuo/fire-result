@@ -4,9 +4,11 @@ import java.util.Objects;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter
+@ToString
 public class DefaultResult implements Result {
 
 	private Integer code;
