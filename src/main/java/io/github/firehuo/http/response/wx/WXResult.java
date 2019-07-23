@@ -1,5 +1,7 @@
 package io.github.firehuo.http.response.wx;
 
+import java.util.Objects;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,9 +11,13 @@ import lombok.ToString;
 @ToString
 public class WXResult {
 
-	public static final int SUCCESS = 0;
-	
-	private int errcode;
+	private final int SUCCESS = 0;
+
+	private Integer errcode;
 	private String errmsg;
-	
+
+	public final boolean isSuccess() {
+		return Objects.equals(errcode, SUCCESS);
+	}
+
 }
