@@ -19,5 +19,9 @@ public class WXResult {
 	public final boolean isSuccess() {
 		return Objects.equals(errcode, SUCCESS);
 	}
+	
+	public final boolean isFail() {
+		return !isSuccess();
+	}
 
 }
