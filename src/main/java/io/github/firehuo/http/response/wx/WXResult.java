@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 public class WXResult {
 
-	private final int SUCCESS = 0;
+	private static final int SUCCESS = 0;
 
 	private Integer errcode;
 	private String errmsg;
