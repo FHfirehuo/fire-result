@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@ToString
+@ToString(callSuper=true)
 public class WXTokenResult extends WXResult {
 
 	private String access_token;

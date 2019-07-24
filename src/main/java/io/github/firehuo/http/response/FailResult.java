@@ -2,7 +2,7 @@ package io.github.firehuo.http.response;
 
 import lombok.ToString;
 
-@ToString
+@ToString(callSuper=true)
 public class FailResult extends DefaultResult {
 
 	public FailResult() {

@@ -9,8 +9,8 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@ToString
 @AllArgsConstructor
+@ToString(callSuper=true)
 public class Page<T> {
 
 	private long total;

@@ -8,7 +8,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@ToString
+@ToString(callSuper=true)
 public class WXUserListResult extends WXResult {
 
 	private List<WXUser> userlist;

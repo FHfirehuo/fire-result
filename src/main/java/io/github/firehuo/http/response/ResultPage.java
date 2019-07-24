@@ -9,7 +9,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@ToString
+@ToString(callSuper=true)
 public class ResultPage<T> extends ResultList<T> {
 
 	private long total;

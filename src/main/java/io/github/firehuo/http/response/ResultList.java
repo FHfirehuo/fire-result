@@ -10,7 +10,7 @@ import lombok.ToString;
 
 @Setter
 @Getter
-@ToString
+@ToString(callSuper=true)
 public class ResultList<T> extends DefaultResult {
 
 	protected List<T> data;
