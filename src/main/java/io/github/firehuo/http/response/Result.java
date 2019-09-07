@@ -1,14 +1,21 @@
 package io.github.firehuo.http.response;
 
-public interface Result {
+public abstract class Result {
 
-	public static final int FAIL = 1;
-	public static final int SUCCESS = 0;
-	public static final String FAIL_MESSAGE = "失败";
-	public static final String SUCCESS_MESSAGE = "成功";
+	int FAIL = 1;
+	int SUCCESS = 0;
+	String FAIL_MESSAGE = "失败";
+	String SUCCESS_MESSAGE = "成功";
 
-	public boolean isSuccess();
+	abstract boolean isSuccess();
 
-	public boolean isSuccess(int successCode);
+	abstract boolean isSuccess(int successCode);
+	
+	public final static Result success() {
+		return new SuccessResult();
+	}
 
+	public final static Result fail() {
+		return new FailResult();
+	}
 }

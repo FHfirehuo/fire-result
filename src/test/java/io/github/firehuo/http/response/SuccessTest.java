@@ -7,6 +7,13 @@ import org.junit.Test;
 
 public class SuccessTest {
 
+
+	@Test
+	public void ResultDefaultMethodTest() {
+		Result.fail();
+		Result.success();
+	}
+
 	@Test
 	public void defaultResultTest() {
 		//DefaultResult successcode is 0

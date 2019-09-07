@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class DefaultResult implements Result {
+public class DefaultResult extends Result {
 
 	private Integer code;
 	private String msg;

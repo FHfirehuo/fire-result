@@ -10,7 +10,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.release.version>0.0.2-SNAPSHOT</project.release.version>
+		<project.release.version>0.0.3-SNAPSHOT</project.release.version>
 		<java.version>1.6</java.version>
 	</properties>
 
@@ -18,7 +18,7 @@
 		<profile>
 			<id>release</id>
 			<properties>
-				<project.release.version>0.0.2</project.release.version>
+				<project.release.version>0.0.3</project.release.version>
 			</properties>
 		</profile>
 	</profiles>
