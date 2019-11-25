@@ -1,6 +1,7 @@
 package io.github.firehuo.http.response;
 
 import java.security.ProviderException;
+import java.util.List;
 import java.util.Objects;
 
 import lombok.Getter;
@@ -10,9 +11,27 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString(callSuper=true)
-public class ResultPage<T> extends ResultList<T> {
+public class PageResult<T> extends ListResult<T> {
 
 	private long total;
+
+
+	public PageResult(List<T> data, long total) {
+		this(SUCCESS, data, total);
+	}
+
+	public PageResult(int code, List<T> data, long total) {
+		this(code, SUCCESS_MESSAGE, data, total);
+	}
+
+	public PageResult(String message, List<T> data, long total) {
+		this(SUCCESS, message, data, total);
+	}
+
+	public PageResult(int code, String message, List<T> data, long total) {
+		super(code, message, data);
+		this.total = total;
+	}
 	
 	/**
 	 * <p>

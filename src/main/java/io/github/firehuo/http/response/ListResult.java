@@ -11,9 +11,28 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString(callSuper=true)
-public class ResultList<T> extends DefaultResult {
+public class ListResult<T> extends DefaultResult {
 
 	protected List<T> data;
+
+	public ListResult(List<T> data) {
+		this(SUCCESS, data);
+	}
+
+
+	public ListResult(int code, List<T> data) {
+		this(code, SUCCESS_MESSAGE, data);
+	}
+
+	public ListResult(String message, List<T> data) {
+		this(SUCCESS, message, data);
+	}
+
+
+	public ListResult(int code, String message, List<T> data) {
+		super(code, message);
+		this.data = data;
+	}
 
 	/**
 	 * <p>

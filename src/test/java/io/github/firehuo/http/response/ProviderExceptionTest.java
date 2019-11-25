@@ -14,11 +14,11 @@ public class ProviderExceptionTest {
 	public void objectResultTest() {
 
 		// 不初始化data默认值
-		ResultObject<String> result = new ResultObject<String>();
+		ObjectResult<String> result = new ObjectResult<String>();
 		assertFalse(result.isSuccess());
 
 		// 始化data默认值为 "成功"
-		result = new ResultObject<String>("成功");
+		result = new ObjectResult<String>("成功");
 		assertTrue(result.isSuccess());
 		assertTrue(result.isSuccess(0));
 		assertTrue(result.isSuccess(Result.SUCCESS));
@@ -26,7 +26,7 @@ public class ProviderExceptionTest {
 		assertEquals(result.getDataOnSuccess(0), "成功");
 		assertEquals(result.getDataOnSuccess(Result.SUCCESS), "成功");
 		assertFalse(result.isSuccess(Result.FAIL));
-		result = new ResultObject<String>(1, "失败", "fail");
+		result = new ObjectResult<String>(1, "失败", "fail");
 		
 		try {
 			result.getDataOnSuccess();

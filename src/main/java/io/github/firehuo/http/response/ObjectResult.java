@@ -10,14 +10,14 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString(callSuper=true)
-public class ResultObject<T> extends DefaultResult {
+public class ObjectResult<T> extends DefaultResult {
 
 	private T data;
 
 	/**
 	 * 不初始化data认为是失败的结果
 	 */
-	public ResultObject() {
+	public ObjectResult() {
 
 	}
 
@@ -26,7 +26,7 @@ public class ResultObject<T> extends DefaultResult {
 	 * 
 	 * @param data 最终的消息体
 	 */
-	public ResultObject(T data) {
+	public ObjectResult(T data) {
 		this(SUCCESS, data);
 	}
 
@@ -36,7 +36,7 @@ public class ResultObject<T> extends DefaultResult {
 	 * @param code  自定义的返回值
 	 * @param data  最终的消息体
 	 */
-	public ResultObject(int code, T data) {
+	public ObjectResult(int code, T data) {
 		this(code, SUCCESS_MESSAGE, data);
 	}
 
@@ -46,7 +46,7 @@ public class ResultObject<T> extends DefaultResult {
 	 * @param message  自定义描述
 	 * @param data 最终的消息体
 	 */
-	public ResultObject(String message, T data) {
+	public ObjectResult(String message, T data) {
 		this(SUCCESS, message, data);
 	}
 
@@ -57,7 +57,7 @@ public class ResultObject<T> extends DefaultResult {
 	 * @param message 自定义描述
 	 * @param data 最终的消息体
 	 */
-	public ResultObject(int code, String message, T data) {
+	public ObjectResult(int code, String message, T data) {
 		super(code, message);
 		this.data = data;
 	}
