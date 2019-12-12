@@ -40,13 +40,22 @@ pom.xml中引入maven依赖
     </dependency>
 ```
 
+###### 版本说明
+2019.12.12
+
+1.0.3
+解决ListResult 和 PageResult 反序列化时data数量翻倍的bug
+
 ###### 关于发布
 
     说明：通过占位符${project.release.version}来控制需要发布的版本。
     用命令mvn deploy -P releases,发布fire-result的0.0.1版本到releases库。
     如果使用命令mvn deploy,则默认使用 0.0.1-SNAPSHOT版本号，将发布fire-result的 0.0.1-SNAPSHOT版本到snapshots库。
     
-在 https://oss.sonatype.org系统中，使用自己的 Sonatype 账号登录后，可在 Staging Repositories 中查看刚才已上传的构件，这些构件目前是放在Staging 仓库中，可进行模糊查询，快速定位到自己的构件。此时，该构件的状态为 Open，需要勾选它，然后点击 Close 按钮。系统会自动验证该构件是否满足指定要求，当验证完毕后，状态会变为Closed。
+在 https://oss.sonatype.org系统中，使用自己的 Sonatype 账号登录后，
+可在 Staging Repositories 中查看刚才已上传的构件，这些构件目前是放在Staging 仓库中，
+可进行模糊查询，快速定位到自己的构件。此时，该构件的状态为 Open，需要勾选它，
+然后点击 Close 按钮。系统会自动验证该构件是否满足指定要求，当验证完毕后，状态会变为Closed。
 
 发现release版本才会出现在Staging Repositories里，snapshot版本不会出现在这里。
 
@@ -54,7 +63,8 @@ pom.xml中引入maven依赖
 
 在Staging Profiles可以看到正在release。
 
-这个前面的Sonatype工作人员其实在审核你的Issue时，在comment中已经提示你了，在Issue下面回复一条“构件已成功发布”的评论，这是为了通知 Sonatype 的工作人员为需要发布的构件做审批，发布后会关闭该Issue。
+这个前面的Sonatype工作人员其实在审核你的Issue时，在comment中已经提示你了，在Issue下面回复一条“构件已成功发布”的评论，
+这是为了通知 Sonatype 的工作人员为需要发布的构件做审批，发布后会关闭该Issue。
 
 
 ```

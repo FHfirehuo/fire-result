@@ -8,13 +8,20 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
+//@Setter
 @Getter
 @ToString(callSuper=true)
 public class PageResult<T> extends ListResult<T> {
 
 	private long total;
 
+	private PageResult(){
+		super();
+	};
+
+	public void setTotal(long total) {
+		this.total = total;
+	}
 
 	public PageResult(List<T> data, long total) {
 		this(SUCCESS, data, total);
@@ -41,8 +48,8 @@ public class PageResult<T> extends ListResult<T> {
 	 * @return 返回 {@code io.github.firehuo.http.response.Page<T>}类型的对象
 	 * @throws ProviderException 服务提供方出现异常返回失败结果
 	 */
-	public final Page<T> getReusltPageOnSuccess() {
-		return getReusltPageOnSuccess(SUCCESS);
+	public final Page<T> getPageOnSuccess() {
+		return getPageOnSuccess(SUCCESS);
 	}
 
 	/**
@@ -53,7 +60,7 @@ public class PageResult<T> extends ListResult<T> {
 	 * @return 返回 {@code io.github.firehuo.http.response.Page<T>}类型的对象
 	 * @throws ProviderException 服务提供方出现异常返回失败结果
 	 */
-	public final Page<T> getReusltPageOnSuccess(int successCode) {
+	public final Page<T> getPageOnSuccess(int successCode) {
 		if (isSuccess(successCode)) {
 			return new Page<T>(this.total, getData());
 		}

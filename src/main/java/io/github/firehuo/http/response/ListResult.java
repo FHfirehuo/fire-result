@@ -15,6 +15,10 @@ public class ListResult<T> extends DefaultResult {
 
 	protected List<T> data;
 
+	public ListResult(){
+
+	}
+
 	public ListResult(List<T> data) {
 		this(SUCCESS, data);
 	}
@@ -46,6 +50,10 @@ public class ListResult<T> extends DefaultResult {
 		return getDataOnSuccess(SUCCESS);
 	}
 
+	private final void setDataOnSuccess(List<T> data){
+		//解决反序列化时data数量翻倍的bug
+	}
+
 	/**
 	 * <p>
 	 * 	 如果 {@code code} = {@code successCode} 则返回 {@code data},否则抛出{@code java.security.ProviderException} 异常
@@ -56,7 +64,7 @@ public class ListResult<T> extends DefaultResult {
 	 */
 	public final List<T> getDataOnSuccess(int successCode) {
 		if (isSuccess(successCode)) {
-			return data;
+			return this.data;
 		}
 		throw new ProviderException("远程服务返回失败结果; 失败信息如下:" + (Objects.isNull(getMessage()) ? getMsg() : getMessage()));
 	}
