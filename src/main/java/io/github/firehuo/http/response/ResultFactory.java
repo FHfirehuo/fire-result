@@ -17,6 +17,10 @@ public final class ResultFactory {
         return new FailResult();
     }
 
+    public static FailResult buildFailResult(String failMsg) {
+        return new FailResult(failMsg);
+    }
+
     public static <T> ObjectResult<T> buildObjectResult(T data) {
         return new ObjectResult<T>(data);
     }

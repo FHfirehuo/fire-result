@@ -41,8 +41,12 @@ pom.xml中引入maven依赖
 ```
 
 ###### 版本说明
-2019.12.12
 
+2019.12.18
+
+添加ArrayBody用于接收数组类型的消息体
+
+2019.12.12
 1.0.3
 解决ListResult 和 PageResult 反序列化时data数量翻倍的bug
 
